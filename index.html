@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preload" href="https://unpkg.com/lucide@latest" as="script" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="#000000c3" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gestão de Condomínios</title>
+  </head>
+  <body class="bg-[#1e1e1e]">
+    <header></header>
+
+    <main class="font-[poppins]">
+      <div
+        class="hero pt-[4rem] xl:pt-[0rem] xl:px-[3rem] 2xl:px-[3rem] relative w-screen 2xl:h-[100dvh] flex flex-col xl:flex-row 2xl:flex-row 2xl:items-normal xl:items-normal justify-center items-center font-[poppins] xl:gap-0 2xl:gap-0 gap-10"
+      >
+        <div
+          class="esq 2xl:w-[50%] xl:w-[50%] flex flex-col items-center justify-center gap-[2rem]"
+        >
+          <h1
+            class="text-3xl xl:text-[50px] 2xl:text-[50px] text-white font-bold"
+          >
+            SÍNDICA PROFISSIONAL
+          </h1>
+          <p
+            class="text-white text-[28px] text-center xl:w-[77%] 2xl:w-[77%] font-[200]"
+          >
+            Te ajudo a ter uma administração condominial com eficiência e
+            qualidade.
+          </p>
+          <button
+            class="button items-center text-white 2xl:text-[20px] flex flex-row gap-8"
+          >
+            Fale comigo
+            <span class="w-6 h-6" data-lucide="phone-outgoing"> </span>
+          </button>
+        </div>
+
+        <img
+          class="xl:w-[50%] 2xl:w-[50%] p-4 2xl:px-0 2xl:rounded-t-[50px] 2xl:rounded-br-[50px] 2xl:rounded-t-[50px] 2xl:rounded-bl-[318px] rounded-t-[50px] rounded-br-[50px] rounded-t-[50px] rounded-bl-[130px]"
+          src="445534208_325799700557451_4477202779554882686_n.webp"
+          alt=""
+        />
+      </div>
+
+      <div
+        class="carrossel relative pt-[10rem] w-full max-w-4xl xl:max-w-6xl mx-auto fade-mask"
+      >
+        <div class="flex overflow-hidden">
+          <!-- DIV ÚNICA com todas as palavras DUPLICADAS -->
+          <div class="scroller whitespace-nowrap">
+            <span class="text-3xl xl:text-5xl font-bold mx-8 text-white"
+              >@sindica_ellen</span
+            >
+            <span class="text-3xl xl:text-5xl font-bold mx-8 text-[#F0C75E]"
+              >@sindica_ellen</span
+            >
+            <span class="text-3xl xl:text-5xl font-bold mx-8 text-white"
+              >@sindica_ellen</span
+            >
+            <span class="text-3xl xl:text-5xl font-bold mx-8 text-[#F0C75E]"
+              >@sindica_ellen</span
+            >
+            <!-- REPETIÇÃO IDÊNTICA -->
+            <span class="text-3xl xl:text-5xl font-bold mx-8 text-white"
+              >@sindica_ellen</span
+            >
+            <span class="text-3xl xl:text-5xl font-bold mx-8 text-[#F0C75E]"
+              >@sindica_ellen</span
+            >
+            <span class="text-3xl xl:text-5xl font-bold mx-8 text-white"
+              >@sindica_ellen</span
+            >
+            <span class="text-3xl xl:text-5xl font-bold mx-8 text-[#F0C75E]"
+              >@sindica_ellen</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <section
+        class="sobre-mim xl:pt-[10rem] 2xl:pt-[10rem] pt-[7rem] flex flex-col justify-center items-center xl:gap-0 2xl:gap-0 gap-10"
+      >
+        <h2
+          class="sobremim font-bold text-3xl xl:text-[40px] 2xl:text-[50px] text-[#F0C75E]"
+        >
+          Um pouco sobre mim
+        </h2>
+
+        <div
+          class="container rounded-[30px] xl:mt-[3rem] 2xl:mt-[3rem] p-[20px] xl:gap-[50px] 2xl:gap-[85px] gap-10 flex flex-col xl:flex-row 2xl:flex-row justify-center items-center"
+        >
+          <img
+            class="rounded-[30px] xl:w-[40%] 2xl:w-[50%] w-[90%]"
+            src="445534208_325799700557451_4477202779554882686_n.webp"
+            alt=""
+          />
+          <p
+            class="text-white text-[15px] xl:text-[20px] 2xl:text-[25px] space-y-[13px]"
+          >
+            Me chamo Ellen Carvalho, Bacharel em Direito e Síndica Profissional
+            desde 2015, com especialização em condomínios. <br />
+            <br />
+            Minha jornada começou como síndica moradora e, ao longo dos anos,
+            fui me especializando e aprimorando minhas habilidades <br /><br />
+            Com os feedbacks positivos que recebi, fui convidada a administrar
+            os condomínios vizinhos, uma tarefa que realizo com grande prazer e
+            que me motiva cada vez mais a me dedicar e me especializar. <br />
+            <br />
+            <span class="font-bold"
+              >Bacharel em Direito - Universidade Anhanguera; Direito
+              Condominial - Karpat advogados; <br />
+              Direito Condominial - Fundação Getúlio Vargas; <br />
+              Síndico Profissional I, II E III - Gábor Rh; <br />
+              Mediação e Arbitragem Condominal - Gábor Rh
+            </span>
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="servicos flex flex-col justify-center items-center xl:px-[3rem] 2xl:px-[3rem] px-[1rem] xl:py-[10rem] 2xl:py-[5rem] py-[10rem] gap-[61px]"
+      >
+        <h2
+          class="titulo-servicos font-bold text-3xl xl:text-[40px] 2xl:text-[40px] text-[#F0C75E]"
+        >
+          Serviços oferecidos
+        </h2>
+
+        <p
+          class="desc-servicos text-[20px] text-white text-center xl:w-[80%] 2xl:w-[60%]"
+        >
+          Mas afinal, o que eu ofereço de tão diferente e eficaz, que me fez ter
+          o sucesso que tenho tido durantes esses anos e ser uma síndica amada
+          pelas pessoas que trabalham e já trabalharam comigo?
+        </p>
+
+        <span
+          class="arrow-down w-[50px] h-[50px] text-[#FFFFFF99]"
+          data-lucide="arrow-down"
+        ></span>
+
+        <div
+          class="cards relative flex flex-col xl:flex-row 2xl:flex-row justify-center items-center xl:items-normal 2xl:items-normal gap-10 rounded-xl  xl:flex-wrap 2xl:flex-wrap"
+        >
+          <div
+            class="card1 card rounded-tl-[16px] rounded-br-[16px] rounded-bl-[5px] rounded-tr-[5px] flex flex-col px-5 py-6 xl:w-[35%] 2xl:w-[25%]"
+          >
+            <span class="w-9 h-9 text-white" data-lucide="brain"></span>
+            <h3 class="text-[#F0C75E] mt-9 text-xl">Gestão inteligente</h3>
+            <p class="text-white mt-4">
+              Experiência e especialização garantem uma administração organizada
+              e transparente
+            </p>
+          </div>
+
+          <div
+            class="card2 card rounded-tl-[16px] rounded-br-[16px] rounded-bl-[5px] rounded-tr-[5px] flex flex-col px-5 py-6 xl:w-[35%] 2xl:w-[25%]"
+          >
+            <span class="w-9 h-9 text-white" data-lucide="handshake"></span>
+            <h3 class="text-[#F0C75E] mt-9 text-xl">Resolução de conflitos</h3>
+            <p class="text-white mt-4">
+              Habilidades para mediar e resolver problemas de forma imparcial
+            </p>
+          </div>
+
+          <div
+            class="card3 card rounded-tl-[16px] rounded-br-[16px] rounded-bl-[5px] rounded-tr-[5px] flex flex-col px-5 py-6 xl:w-[35%] 2xl:w-[25%]"
+          >
+            <span
+              class="w-9 h-9 text-white"
+              data-lucide="wallet-minimal"
+            ></span>
+            <h3 class="text-[#F0C75E] mt-9 text-xl">Economia</h3>
+            <p class="text-white mt-4">
+              Conhecimentos para negociar melhores contratos e reduzir custos
+            </p>
+          </div>
+
+          <div
+            class="card4 card rounded-tl-[16px] rounded-br-[16px] rounded-bl-[5px] rounded-tr-[5px] flex flex-col px-5 py-6 xl:w-[35%] 2xl:w-[25%]"
+          >
+            <span class="w-9 h-9 text-white" data-lucide="scale"></span>
+            <h3 class="text-[#F0C75E] mt-9 text-xl">Legalidade</h3>
+            <p class="text-white mt-4">
+              Manutenção do condomínio em conformidade com as leis e
+              regulamentos
+            </p>
+          </div>
+
+          <div
+            class="card5 card rounded-tl-[16px] rounded-br-[16px] rounded-bl-[5px] rounded-tr-[5px] flex flex-col px-5 py-6 xl:w-[35%] 2xl:w-[25%]"
+          >
+            <span class="w-9 h-9 text-white" data-lucide="settings"></span>
+            <h3 class="text-[#F0C75E] mt-9 text-xl">Gestão técnica</h3>
+            <p class="text-white mt-4">
+              Acompanhamento rigoroso da segurança e das manutenções necessárias
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="depoimentos gap-10 xl:gap-5 2xl:gap-5 relative horizontal-scroll flex flex-col justify-center items-center py-[5rem] px-[1rem]"
+      >
+        <h2
+          class="titulo-depoimentos font-bold text-3xl xl:text-[40px] 2xl:text-[40px] text-[#F0C75E]"
+        >
+          Depoimentos
+        </h2>
+        <p
+          class="desc-depoimentos text-[20px] text-white text-center xl:w-[80%] 2xl:w-[60%]"
+        >
+          O que os condôminos dizem sobre a minha gestão?
+        </p>
+        <div class="depoimentos gap-10 w-[100%] xl:gap-0 2xl:gap-0 flex flex-col xl:flex-row flex-wrap justify-center item-center xl:gap-10 2xl:gap-10 mt-[4rem]">
+            <div
+              class="depoimento max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full"
+                >
+                  R
+                </div>
+                <div>
+                  <div class="text-gray-900 font-medium">
+                    Rogerio Nunes Juvencio
+                  </div>
+                  <div class="text-gray-600 text-sm">Morador</div>
+                </div>
+              </div>
+
+              <div class="flex text-[#F0C75E] text-xl">★★★★★</div>
+
+              <p class="text-gray-700">
+                Excelente atendimento da portaria e admiração top. Parabéns
+                <strong>síndica</strong> Elen Rocha, espero muitoss anos com sua
+                gestão
+              </p>
+            </div>
+            <div
+              class="depoimento max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full"
+                >
+                  CM
+                </div>
+                <div>
+                  <div class="text-gray-900 font-medium">Camila Muryel</div>
+                  <div class="text-gray-600 text-sm">Moradora</div>
+                </div>
+              </div>
+
+              <div class="flex text-[#F0C75E] text-xl">★★★★★</div>
+
+              <p class="text-gray-700">
+                Condomínio muito bem estruturado e organizado. As
+                administradoras, <strong>síndica</strong> e subsíndica, são
+                acessíveis, prestativas, e pelo que eu percebo, se empenham
+                plenamente para resolução das demandas dos condôminos.
+              </p>
+            </div>
+            <div
+              class="depoimento max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full"
+                >
+                  RM
+                </div>
+                <div>
+                  <div class="text-gray-900 font-medium">
+                    Rubens Morais De Almeida
+                  </div>
+                  <div class="text-gray-600 text-sm">Morador</div>
+                </div>
+              </div>
+
+              <div class="flex text-[#F0C75E] text-xl">★★★★★</div>
+
+              <p class="text-gray-700">
+                Eu morei nesse condomínio por 7 anos. Eu e minha familia fomos
+                muito felizes, fizemos grande amigos e vimos muitas coisas
+                legais acontecerem. A <strong>síndica</strong> é moradora e
+                muida desse lugar com o maior carinho e dedicação.
+              </p>
+            </div>
+            <div
+              class="depoimento max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full"
+                >
+                  DJ
+                </div>
+                <div>
+                  <div class="text-gray-900 font-medium">Debora Jeroto</div>
+                  <div class="text-gray-600 text-sm">Moradora</div>
+                </div>
+              </div>
+
+              <div class="flex text-[#F0C75E] text-xl">★★★★★</div>
+
+              <p class="text-gray-700">
+                Moro 8 anos neste condomínio, e confesso que a evolução desde
+                que a atual <strong>síndica</strong> Ellen assumiu, foi
+                extremamente notória, tanto em parcerias,m melhorias,
+                atendimento, organização, limpeza, os trabalhadores sempre
+                simpáticos e atentos em tudo.
+              </p>
+            </div>
+          </div>
+      </section>
+    </main>
+
+    <script src="animations.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </body>
+</html>
