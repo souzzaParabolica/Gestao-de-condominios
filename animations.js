@@ -344,8 +344,8 @@ ScrollTrigger.matchMedia({
       stagger: 0.5,
       scrollTrigger: {
         trigger: ".depoimentos",
-        start: "top 50%",
-        end: "top 30%",
+        start: "top 80%",
+        end: "top 50%",
         scrub: 1.5,
         markers: false,
       },
@@ -360,7 +360,7 @@ ScrollTrigger.matchMedia({
       duration: 1,
       stagger: 0.5,
       scrollTrigger: {
-        trigger: ".depoimentos",
+        trigger: ".secap-depoimentos",
         start: "top 60%", // 👈 Start mais tarde no scroll
         end: "top 20%",
         scrub: 1.5,
@@ -380,7 +380,7 @@ ScrollTrigger.matchMedia({
       duration: 6,
       stagger: 0.5,
       scrollTrigger: {
-        trigger: ".depoimentos",
+        trigger: ".secao-depoimentos",
         start: "top 40%",
         end: "top 5%",
         scrub: 1.5,
