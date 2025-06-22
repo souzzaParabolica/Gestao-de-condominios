@@ -347,7 +347,7 @@ ScrollTrigger.matchMedia({
         start: "top 50%",
         end: "top 30%",
         scrub: 1.5,
-        markers: true,
+        markers: false,
       },
     });
   },
