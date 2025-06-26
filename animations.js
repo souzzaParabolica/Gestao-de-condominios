@@ -139,7 +139,6 @@ ScrollTrigger.matchMedia({
     };
   },
 });
-  
 
 ScrollTrigger.matchMedia({
   // DESKTOP

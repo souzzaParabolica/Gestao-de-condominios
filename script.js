@@ -103,7 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
       showSlide(nextIndex);
     }
   }
-  
 
   // Carrega os ícones Lucide
   if (typeof lucide !== "undefined") {
@@ -116,6 +115,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (typeof ScrollTrigger !== "undefined" && gsap.registerPlugin) {
       gsap.registerPlugin(ScrollTrigger);
     }
+
+    // Animação para o CTA
+    gsap.to(".footer-cta", {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      delay: 0.3,
+      ease: "back.out(1.2)",
+      scrollTrigger: {
+        trigger: "footer",
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+    });
 
     // Animação principal do footer
     gsap.to("footer", {
@@ -171,11 +184,21 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Efeitos hover melhorados
-    document.querySelectorAll(".icon-float").forEach((item) => {
+    // Animação especial para o botão do CTA
+    gsap.to(".cta-button", {
+      y: -3,
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: 1,
+    });
+
+    // Efeitos hover
+    document.querySelectorAll(".icon-float, .cta-button").forEach((item) => {
       item.addEventListener("mouseenter", () => {
         gsap.to(item, {
-          y: -3,
+          y: -5,
           scale: 1.05,
           duration: 0.3,
           ease: "power2.out",

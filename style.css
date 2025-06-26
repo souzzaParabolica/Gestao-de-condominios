@@ -203,19 +203,61 @@ img {
             transparent 100%);
 }
 
-/* Animação do Footer */
+/* Estilos gerais do footer */
 footer {
     overflow: hidden;
+    position: relative;
 }
 
+/* Animação dos elementos */
 .footer-item,
-.footer-divider {
+.footer-divider,
+.footer-cta {
     opacity: 0;
     transform: translateY(20px);
     will-change: transform, opacity;
 }
 
-/* Animação dos ícones */
+/* Estilos do CTA */
+.footer-cta {
+    z-index: 10;
+}
+
+.cta-button {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateY(0);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:active {
+    transform: translateY(1px);
+}
+
+/* Efeito pulsante no CTA */
+@keyframes pulse-gold {
+    0% {
+        box-shadow: 0 0 0 0 rgba(240, 199, 94, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(240, 199, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(240, 199, 94, 0);
+    }
+}
+
+.footer-cta:hover {
+    animation: pulse-gold 1.5s infinite;
+}
+
+/* Estilos dos ícones */
 .icon-float {
     display: inline-block;
     will-change: transform;
@@ -226,11 +268,7 @@ footer {
     transform-origin: center;
 }
 
-/* Efeitos de hover */
-.icon-float:hover .icon-svg {
-    animation: float 1.5s ease-in-out infinite;
-}
-
+/* Efeito flutuante nos ícones */
 @keyframes float {
 
     0%,
@@ -241,6 +279,10 @@ footer {
     50% {
         transform: translateY(-5px) scale(1.05);
     }
+}
+
+.icon-float:hover .icon-svg {
+    animation: float 1.5s ease-in-out infinite;
 }
 
 /* Estilos complementares */
@@ -260,4 +302,10 @@ footer button:hover {
 
 footer input::placeholder {
     color: #a0a0a0;
-    opacity: 1; }
+    opacity: 1;
+}
+
+/* Gradiente do CTA */
+.bg-gradient-to-r.from-\[\#F0C75E\].to-\[\#e0b84d\] {
+    background: linear-gradient(135deg, #F0C75E 0%, #e0b84d 100%);
+}
