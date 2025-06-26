@@ -162,7 +162,7 @@ ScrollTrigger.matchMedia({
       scrollTrigger: {
         trigger: ".container",
         start: "top 50%",
-        end: "top 0%",
+        end: "top 20%",
         scrub: 1.5,
         markers: false,
       },
@@ -174,7 +174,7 @@ ScrollTrigger.matchMedia({
       scrollTrigger: {
         trigger: ".container",
         start: "top 50%",
-        end: "top 0%",
+        end: "top 20%",
         scrub: 1.5,
         markers: false,
       },
@@ -212,6 +212,7 @@ ScrollTrigger.matchMedia({
       ".container p",
       {
         opacity: 0,
+        transform: "scale(0.95)",
         duration: 1,
         scrollTrigger: {
           trigger: ".container",
@@ -267,8 +268,8 @@ ScrollTrigger.matchMedia({
       stagger: 0.5,
       scrollTrigger: {
         trigger: ".servicos",
-        start: "top 20%",
-        end: "top -10%",
+        start: "top 40%",
+        end: "top 10%",
         scrub: 1.5,
         markers: false,
       },
@@ -304,8 +305,8 @@ ScrollTrigger.matchMedia({
       stagger: 0.5,
       scrollTrigger: {
         trigger: ".cards",
-        start: "top 50%",
-        end: "top 5%",
+        start: "top 60%",
+        end: "top 40%",
         scrub: 1.5,
         markers: false,
       },
@@ -359,9 +360,9 @@ ScrollTrigger.matchMedia({
       duration: 1,
       stagger: 0.5,
       scrollTrigger: {
-        trigger: ".secap-depoimentos",
-        start: "top 60%", // 👈 Start mais tarde no scroll
-        end: "top 20%",
+        trigger: ".secao-depoimentos",
+        start: "top 80%", // 👈 Start mais tarde no scroll
+        end: "top 40%",
         scrub: 1.5,
         markers: false,
       },
