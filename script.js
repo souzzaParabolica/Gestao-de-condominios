@@ -232,3 +232,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function showNewsletterMessage() {
+  const input = document.getElementById("emailInput");
+  const message = document.getElementById("newsletterMessage");
+
+  if (input.value.trim() === "") {
+    alert("Por favor, insira um e-mail válido.");
+    return;
+  }
+
+  message.classList.remove("hidden");
+  input.value = "";
+
+  // Esconde a mensagem após 5 segundos
+  setTimeout(() => {
+    message.classList.add("hidden");
+  }, 5000);
+}

@@ -368,3 +368,31 @@ footer input::placeholder {
     .cta-button-call {
         width: 100%;
     } }
+/* Estilos do botão Voltar ao Topo */
+#back-to-top {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(20px);
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(240, 199, 94, 0.4);
+}
+
+#back-to-top:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Acessibilidade */
+#back-to-top:focus-visible {
+    outline: 2px solid #F0C75E;
+    outline-offset: 2px; }

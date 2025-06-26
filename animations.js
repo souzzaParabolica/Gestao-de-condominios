@@ -24,16 +24,6 @@ tl.to(hero, { autoAlpha: 1, duration: 0.2 })
   .to(button, { y: 0, scale: 1, autoAlpha: 1, duration: 0.5 }, 0.6)
   .to(img, { x: 0, rotation: 0, scale: 1, autoAlpha: 1, duration: 0.8 }, 0.3);
 
-// Efeito de flutuação sutil contínua para a imagem
-gsap.to(img, {
-  y: 10,
-  duration: 3,
-  repeat: -1,
-  yoyo: true,
-  ease: "sine.inOut",
-  delay: 1.5,
-});
-
 // Efeito de brilho no botão ao passar o mouse
 button.addEventListener("mouseenter", () => {
   gsap.to(button, {
@@ -436,6 +426,15 @@ gsap.to(".cta-button-call", {
   yoyo: true,
   ease: "sine.inOut",
   delay: 0.8
+});
+
+gsap.to(".primeiro-cta", {
+  y: -1,
+  duration: 1.5,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut",
+  delay: 0.5,
 });
 
 // Efeitos hover nos botões do CTA
