@@ -1,136 +1,109 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
-  // Menu hamburger functionality
-  lucide.createIcons();
-  const hamburger = document.querySelector(".hamburger");
-  const mobileMenu = document.querySelector(".mobile-menu");
-  const closeBtn = document.querySelector(".close-btn");
+  const depoimentos = document.querySelectorAll(".depoimento");
+  const dots = document.querySelectorAll(".dot");
 
-  hamburger.addEventListener("click", () => {
-    mobileMenu.classList.add("active");
+  let current = 0;
+  let isTransitioning = false;
+
+  function showSlide(index) {
+    if (index === current || isTransitioning) return;
+    isTransitioning = true;
+
+    const currentSlide = depoimentos[current];
+    const nextSlide = depoimentos[index];
+
+    // Anima saída do slide atual
+    currentSlide.classList.add("opacity-0", "scale-95");
+    currentSlide.classList.remove("opacity-100", "scale-100");
+
+    // Remove destaque das bolinhas e volta ao cinza
+    dots.forEach((dot) => {
+      dot.classList.remove("bg-[#F0C75E]");
+      dot.classList.add("bg-gray-400");
+    });
+
+    setTimeout(() => {
+      currentSlide.classList.add("hidden");
+
+      nextSlide.classList.remove("hidden");
+      nextSlide.classList.remove("opacity-100", "scale-100");
+      nextSlide.classList.add("opacity-0", "scale-95");
+
+      // Força reflow pra garantir transição suave
+      void nextSlide.offsetWidth;
+
+      // Anima entrada do próximo slide
+      nextSlide.classList.replace("opacity-0", "opacity-100");
+      nextSlide.classList.replace("scale-95", "scale-100");
+
+      // Marca a bolinha certa
+      dots[index].classList.add("bg-[#F0C75E]");
+      dots[index].classList.remove("bg-gray-400");
+
+      current = index;
+      isTransitioning = false;
+    }, 300);
+  }
+
+  // Inicializa com o primeiro slide e bolinha selecionada
+  window.addEventListener("DOMContentLoaded", () => {
+    const firstSlide = depoimentos[0];
+    firstSlide.classList.remove("hidden");
+    firstSlide.classList.replace("opacity-0", "opacity-100");
+    firstSlide.classList.replace("scale-95", "scale-100");
+
+    dots.forEach((dot) => {
+      dot.classList.remove("bg-[#F0C75E]");
+      dot.classList.add("bg-gray-400");
+    });
+
+    dots[current].classList.add("bg-[#F0C75E]");
+    dots[current].classList.remove("bg-gray-400");
   });
 
-  closeBtn.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-  });
-
-  // Fechar o menu ao clicar em um item
-  const menuItems = mobileMenu.querySelectorAll(".nav-items li");
-  menuItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      mobileMenu.classList.remove("active");
+  // Evento para troca ao clicar nas bolinhas
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      showSlide(i);
     });
   });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
+  // --- SWIPE MOBILE --- //
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const minSwipeDistance = 50; // distância mínima pra considerar swipe
 
-  const scrollContent = document.querySelector(".scroll-content");
-  const scrollWidth = scrollContent.scrollWidth;
-  const viewportWidth = window.innerWidth;
+  const carrossel = document.querySelector("#carrossel-depoimentos");
 
-  gsap.to(scrollContent, {
-    x: () => `-${scrollWidth - viewportWidth}px`,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".horizontal-scroll",
-      start: "top top",
-      end: () => `+=${scrollWidth - viewportWidth}`,
-      scrub: true,
-      pin: true,
-      anticipatePin: 1,
-      markers: false,
-    },
+  carrossel.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
   });
-});
 
-const depoimentos = document.querySelectorAll(".depoimento");
-const dots = document.querySelectorAll(".dot");
-
-let current = 0;
-let isTransitioning = false;
-
-function showSlide(index) {
-  if (index === current || isTransitioning) return;
-  isTransitioning = true;
-
-  const currentSlide = depoimentos[current];
-  const nextSlide = depoimentos[index];
-
-  currentSlide.classList.add("opacity-0", "scale-95");
-  currentSlide.classList.remove("opacity-100", "scale-100");
-
-  dots[current].classList.remove("bg-[#F0C75E]");
-
-  setTimeout(() => {
-    currentSlide.classList.add("hidden");
-
-    nextSlide.classList.remove("hidden");
-    nextSlide.classList.remove("opacity-100", "scale-100");
-    nextSlide.classList.add("opacity-0", "scale-95");
-
-    void nextSlide.offsetWidth;
-
-    nextSlide.classList.replace("opacity-0", "opacity-100");
-    nextSlide.classList.replace("scale-95", "scale-100");
-
-    dots[index].classList.add("bg-[#F0C75E]");
-
-    current = index;
-    isTransitioning = false;
-  }, 300);
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  const firstSlide = depoimentos[0];
-  firstSlide.classList.remove("hidden");
-  firstSlide.classList.replace("opacity-0", "opacity-100");
-  firstSlide.classList.replace("scale-95", "scale-100");
-  dots[0].classList.add("bg-[#F0C75E]");
-});
-
-dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => {
-    showSlide(i);
+  carrossel.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipeGesture();
   });
-});
 
-// --- AQUI COMEÇA O SHOW DO SWIPE --- //
-let touchStartX = 0;
-let touchEndX = 0;
-const minSwipeDistance = 50; // quanto precisa deslizar pra valer
+  function handleSwipeGesture() {
+    const distance = touchEndX - touchStartX;
 
-const carrossel = document.querySelector("#carrossel-depoimentos");
+    if (Math.abs(distance) < minSwipeDistance) {
+      // swipe curto, ignora
+      return;
+    }
 
-carrossel.addEventListener("touchstart", (e) => {
-  touchStartX = e.changedTouches[0].screenX;
-});
-
-carrossel.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipeGesture();
-});
-
-function handleSwipeGesture() {
-  const distance = touchEndX - touchStartX;
-
-  if (Math.abs(distance) < minSwipeDistance) {
-    // Swipe muito curto, ignora
-    return;
+    if (distance > 0) {
+      // swipe pra direita -> slide anterior
+      const prevIndex = current === 0 ? depoimentos.length - 1 : current - 1;
+      showSlide(prevIndex);
+    } else {
+      // swipe pra esquerda -> próximo slide
+      const nextIndex = current === depoimentos.length - 1 ? 0 : current + 1;
+      showSlide(nextIndex);
+    }
   }
-
-  if (distance > 0) {
-    // Swipe pra direita -> slide anterior
-    const prevIndex = current === 0 ? depoimentos.length - 1 : current - 1;
-    showSlide(prevIndex);
-  } else {
-    // Swipe pra esquerda -> próximo slide
-    const nextIndex = current === depoimentos.length - 1 ? 0 : current + 1;
-    showSlide(nextIndex);
-  }
-}
-
+  
 
   // Carrega os ícones Lucide
   if (typeof lucide !== "undefined") {
@@ -234,4 +207,5 @@ function handleSwipeGesture() {
         }
       });
     });
-};
+  }
+});
