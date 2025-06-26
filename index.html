@@ -245,123 +245,181 @@
         </div>
       </section>
 
-      <section
-        class="secao-depoimentos gap-10 xl:gap-5 2xl:gap-5 relative flex flex-col justify-center items-center py-0 2xl:py-[5rem] px-[1rem]"
-      >
-        <h2
-          class="titulo-depoimentos font-bold text-3xl xl:text-[40px] 2xl:text-[40px] text-[#F0C75E]"
-        >
-          Depoimentos
-        </h2>
-        <p
-          class="desc-depoimentos text-[20px] text-white text-center xl:w-[80%] 2xl:w-[60%]"
-        >
+      <section class="secao-depoimentos relative flex flex-col items-center py-12 px-4">
+        <h2 class="titulo-depoimentos font-bold text-3xl text-[#F0C75E]">Depoimentos</h2>
+        <p class="desc-depoimentos text-[20px] text-white text-center max-w-3xl mt-2 mb-10">
           O que os condôminos dizem sobre a minha gestão?
         </p>
-        <div class="depoimentos gap-10 w-full flex flex-col items-center xl:items-stretch xl:flex-row flex-wrap justify-center xl:gap-10 2xl:gap-10 mt-[4rem]">
-          <div
-              class="depoimento max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
-            >
+      
+        <!-- Carrossel -->
+        <div id="carrossel-depoimentos" class="carrossel-depoimentos relative w-full max-w-xl">
+          <!-- Slides -->
+          <div class="depoimento hidden opacity-0 scale-95 transition-all duration-500 ease-in-out" data-index="0">
+            <!-- Conteúdo do depoimento 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 space-y-4">
               <div class="flex items-center space-x-4">
-                <div
-                  class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full"
-                >
-                  R
-                </div>
+                <div class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full">R</div>
                 <div>
-                  <div class="text-gray-900 font-medium">
-                    Rogerio Nunes Juvencio
-                  </div>
+                  <div class="text-gray-900 font-medium">Rogerio Nunes Juvencio</div>
                   <div class="text-gray-600 text-sm">Morador</div>
                 </div>
               </div>
-
               <div class="flex text-[#F0C75E] text-xl">★★★★★</div>
-
               <p class="text-gray-700">
                 Excelente atendimento da portaria e admiração top. Parabéns
-                <strong>síndica</strong> Ellen Rocha, espero muitos anos com sua
-                gestão
+                <strong>síndica</strong> Ellen Rocha, espero muitos anos com sua gestão.
               </p>
             </div>
-            <div
-              class="depoimento max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
-            >
+          </div>
+      
+          <div class="depoimento hidden opacity-0 scale-95 transition-all duration-500 ease-in-out" data-index="1">
+            <!-- Conteúdo do depoimento 2 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 space-y-4">
               <div class="flex items-center space-x-4">
-                <div
-                  class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full"
-                >
-                  CM
-                </div>
+                <div class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full">CM</div>
                 <div>
                   <div class="text-gray-900 font-medium">Camila Muryel</div>
                   <div class="text-gray-600 text-sm">Moradora</div>
                 </div>
               </div>
-
               <div class="flex text-[#F0C75E] text-xl">★★★★★</div>
-
               <p class="text-gray-700">
-                Condomínio muito bem estruturado e organizado. As
-                administradoras, <strong>síndica</strong> e subsíndica, são
-                acessíveis, prestativas, e pelo que eu percebo, se empenham
-                plenamente para resolução das demandas dos condôminos.
+                Condomínio muito bem estruturado e organizado. As administradoras,
+                <strong>síndica</strong> e subsíndica, são acessíveis, prestativas, e se empenham para resolver tudo.
               </p>
             </div>
-            <div
-              class="depoimento max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
-            >
+          </div>
+      
+          <div class="depoimento hidden opacity-0 scale-95 transition-all duration-500 ease-in-out" data-index="2">
+            <!-- Conteúdo do depoimento 3 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 space-y-4">
               <div class="flex items-center space-x-4">
-                <div
-                  class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full"
-                >
-                  RM
-                </div>
+                <div class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full">RM</div>
                 <div>
-                  <div class="text-gray-900 font-medium">
-                    Rubens Morais De Almeida
-                  </div>
+                  <div class="text-gray-900 font-medium">Rubens Morais De Almeida</div>
                   <div class="text-gray-600 text-sm">Morador</div>
                 </div>
               </div>
-
               <div class="flex text-[#F0C75E] text-xl">★★★★★</div>
-
               <p class="text-gray-700">
-                Eu morei nesse condomínio por 7 anos. Eu e minha familia fomos
-                muito felizes, fizemos grande amigos e vimos muitas coisas
-                legais acontecerem. A <strong>síndica</strong> é moradora e
-                muida desse lugar com o maior carinho e dedicação.
+                Eu morei nesse condomínio por 7 anos. Fomos muito felizes. A
+                <strong>síndica</strong> cuida desse lugar com muito carinho.
               </p>
             </div>
-            <div
-              class="depoimento max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
-            >
+          </div>
+      
+          <div class="depoimento hidden opacity-0 scale-95 transition-all duration-500 ease-in-out" data-index="3">
+            <!-- Conteúdo do depoimento 4 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 space-y-4">
               <div class="flex items-center space-x-4">
-                <div
-                  class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full"
-                >
-                  DJ
-                </div>
+                <div class="h-12 w-12 flex items-center justify-center bg-red-900 text-white text-lg font-semibold rounded-full">DJ</div>
                 <div>
                   <div class="text-gray-900 font-medium">Debora Jeroto</div>
                   <div class="text-gray-600 text-sm">Moradora</div>
                 </div>
               </div>
-
               <div class="flex text-[#F0C75E] text-xl">★★★★★</div>
-
               <p class="text-gray-700">
-                Moro 8 anos neste condomínio, e confesso que a evolução desde
-                que a atual <strong>síndica</strong> Ellen assumiu, foi
-                extremamente notória, tanto em parcerias,m melhorias,
-                atendimento, organização, limpeza, os trabalhadores sempre
-                simpáticos e atentos em tudo.
+                Moro há 8 anos aqui, e desde que a <strong>síndica</strong> Ellen assumiu, tudo melhorou muito. Organização, limpeza e carinho com os moradores.
               </p>
             </div>
           </div>
+      
+          <!-- Navegação -->
+          <div class="flex justify-center space-x-3 mt-6">
+            <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-[#F0C75E] transition-all" data-slide="4"></button>
+            <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-[#F0C75E]" data-slide="1"></button>
+            <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-[#F0C75E]" data-slide="2"></button>
+            <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-[#F0C75E]" data-slide="3"></button>
+          </div>
+        </div>
       </section>
+      
     </main>
+
+    <footer class="bg-[#121212] text-white py-12 px-6 xl:px-20">
+      <div class="max-w-7xl mx-auto">
+        <!-- Conteúdo principal em grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
+          
+          <!-- Logo e descrição -->
+          <div class="footer-item md:col-span-2">
+            <h3 class="text-2xl font-bold text-[#F0C75E] mb-4">Ellen Carvalho</h3>
+            <p class="text-gray-400 leading-relaxed">
+              Síndica profissional especializada em transformar condomínios com excelência e humanidade.<br>
+              <span class="block mt-2">Atuando no mercado desde 2015.</span>
+            </p>
+          </div>
+    
+          <!-- Contato -->
+          <div class="footer-item">
+            <h4 class="text-xl font-semibold mb-4 text-[#F0C75E]">Contato</h4>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 hover:text-[#F0C75E] transition-colors icon-float">
+                <span data-lucide="phone" class="w-5 h-5 icon-svg"></span>
+                <a href="tel:+5511999999999">+55 11 99999-9999</a>
+              </li>
+              <li class="flex items-center gap-3 hover:text-[#F0C75E] transition-colors icon-float">
+                <span data-lucide="mail" class="w-5 h-5 icon-svg"></span>
+                <a href="mailto:ellen.sindica@email.com">ellen.sindica@email.com</a>
+              </li>
+              <li class="flex items-center gap-3 hover:text-[#F0C75E] transition-colors icon-float">
+                <span data-lucide="map-pin" class="w-5 h-5 icon-svg"></span>
+                <span>São Paulo - SP</span>
+              </li>
+            </ul>
+          </div>
+    
+          <!-- Redes Sociais -->
+          <div class="footer-item">
+            <h4 class="text-xl font-semibold mb-4 text-[#F0C75E]">Redes sociais</h4>
+            <div class="flex gap-4">
+              <a href="https://instagram.com/sindica_ellen" target="_blank" 
+                 class="icon-float w-10 h-10 rounded-full bg-[#222] flex items-center justify-center hover:bg-[#F0C75E] hover:text-[#121212] transition-all">
+                <span data-lucide="instagram" class="w-5 h-5 icon-svg"></span>
+              </a>
+              <a href="https://wa.me/5511999999999" target="_blank" 
+                 class="icon-float w-10 h-10 rounded-full bg-[#222] flex items-center justify-center hover:bg-[#F0C75E] hover:text-[#121212] transition-all">
+                <span data-lucide="message-circle" class="w-5 h-5 icon-svg"></span>
+              </a>
+              <a href="#" target="_blank" 
+                 class="icon-float w-10 h-10 rounded-full bg-[#222] flex items-center justify-center hover:bg-[#F0C75E] hover:text-[#121212] transition-all">
+                <span data-lucide="linkedin" class="w-5 h-5 icon-svg"></span>
+              </a>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="mt-6 footer-item">
+              <h5 class="font-medium mb-2">Receba novidades</h5>
+              <div class="flex">
+                <input type="email" placeholder="Seu e-mail" 
+                       class="bg-[#222] text-sm px-3 py-2 rounded-l focus:outline-none w-full">
+                <button class="bg-[#F0C75E] text-[#121212] px-3 py-2 rounded-r text-sm font-medium icon-float">
+                  <span data-lucide="send" class="w-4 h-4 icon-svg"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Divisor -->
+        <div class="footer-divider border-t border-gray-800 mt-12 pt-6">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm">© 2025 Ellen Carvalho. Todos os direitos reservados.</p>
+            
+            <div class="flex gap-4">
+              <a href="#" class="text-gray-500 hover:text-[#F0C75E] text-sm transition-colors">Termos de uso</a>
+              <a href="#" class="text-gray-500 hover:text-[#F0C75E] text-sm transition-colors">Política de privacidade</a>
+            </div>
+            
+            <p class="text-gray-500 text-sm">
+              Desenvolvido por <a href="https://github.com/souzzaparabolica" class="text-[#F0C75E] hover:underline">Souzza</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
 
     <script src="animations.js"></script>
     <script src="script.js"></script>

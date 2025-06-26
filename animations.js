@@ -343,7 +343,7 @@ ScrollTrigger.matchMedia({
       duration: 1,
       stagger: 0.5,
       scrollTrigger: {
-        trigger: ".depoimentos",
+        trigger: ".secao-depoimentos",
         start: "top 80%",
         end: "top 50%",
         scrub: 1.5,
@@ -373,16 +373,15 @@ ScrollTrigger.matchMedia({
 ScrollTrigger.matchMedia({
   // DESKTOP
   "(min-width: 768px)": function () {
-    gsap.from(".depoimento", {
+    gsap.from(".carrossel-depoimentos", {
       opacity: 0,
-      y: 50,
       scale: 0.98,
-      duration: 6,
+      duration: 1,
       stagger: 0.5,
       scrollTrigger: {
         trigger: ".secao-depoimentos",
-        start: "top 40%",
-        end: "top 5%",
+        start: "top 50%",
+        end: "top 10%",
         scrub: 1.5,
         markers: false,
       },
@@ -391,25 +390,21 @@ ScrollTrigger.matchMedia({
 
   // MOBILE
   "(max-width: 767px)": function () {
-    // Pega todos os cards individualmente
-    document.querySelectorAll(".depoimento").forEach((depoimento) => {
-      gsap.from(depoimento, {
-        opacity: 0,
-        y: 50,
-        scale: 0.98,
-        duration: 1.5,
-        scrollTrigger: {
-          trigger: depoimento,
-          start: "top 80%",
-          end: "top 50%",
-          scrub: 1,
-          markers: false,
-        },
-      });
+    gsap.from(".carrossel-depoimentos", {
+      opacity: 0,
+      scale: 0.98,
+      duration: 1,
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: ".secao-depoimentos",
+        start: "top 60%", // 👈 Start mais tarde no scroll
+        end: "top 20%",
+        scrub: 1.5,
+        markers: false,
+      },
     });
   },
 });
-
 // Limpa will-change após as animações para liberar recursos
 ScrollTrigger.addEventListener("refresh", () => {
   animatedElements.forEach((el) => {
