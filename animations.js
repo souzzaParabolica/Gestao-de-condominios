@@ -396,8 +396,8 @@ ScrollTrigger.matchMedia({
   },
 });
 
- // Animação para o CTA entre seções
- gsap.to(".cta-entre-secoes", {
+// Animação para o CTA entre seções
+gsap.to(".cta-entre-secoes", {
   opacity: 1,
   y: 0,
   duration: 1,
@@ -406,7 +406,7 @@ ScrollTrigger.matchMedia({
     trigger: ".cta-entre-secoes",
     start: "top 80%",
     toggleActions: "play none none none",
-  }
+  },
 });
 
 // Animação dos botões do CTA
@@ -416,7 +416,7 @@ gsap.to(".cta-button-whatsapp", {
   repeat: -1,
   yoyo: true,
   ease: "sine.inOut",
-  delay: 0.5
+  delay: 0.5,
 });
 
 gsap.to(".cta-button-call", {
@@ -425,7 +425,7 @@ gsap.to(".cta-button-call", {
   repeat: -1,
   yoyo: true,
   ease: "sine.inOut",
-  delay: 0.8
+  delay: 0.8,
 });
 
 // Animação quase imperceptível
@@ -435,28 +435,70 @@ gsap.to(".primeiro-cta", {
   repeat: -1,
   yoyo: true,
   ease: "sine.inOut",
-  delay: 1
+  delay: 1,
 });
+
+// ANIMAÇÃO OTIMIZADA PARA O BOTÃO CONTINUE-APPLICATION (SEM EMBAÇADO)
+gsap.set(".continue-application", {
+  willChange: "transform",
+  transformPerspective: 1000,
+  backfaceVisibility: "hidden",
+  force3D: true
+});
+
+// Timeline específica para este botão
+const continueTl = gsap.timeline({
+  repeat: -1,
+  yoyo: true,
+  repeatDelay: 0.5
+});
+
+continueTl.to(".continue-application", {
+  y: -2,
+  duration: 1.8,
+  ease: "power1.inOut",
+  modifiers: {
+    y: function(y) {
+      // Arredonda o valor para evitar subpixels que causam embaçado
+      return Math.round(y * 10) / 10;
+    }
+  }
+})
+.to(".continue-application", {
+  y: 0,
+  duration: 1.8,
+  ease: "power1.inOut"
+});
+
+// Otimização para elementos internos do botão
+gsap.set(".continue-application svg, .continue-application .pencil, .continue-application .folder", {
+  transformStyle: "preserve-3d",
+  backfaceVisibility: "hidden",
+  willChange: "transform"
+});
+
 // Efeitos hover nos botões do CTA
-document.querySelectorAll('.cta-button-whatsapp, .cta-button-call').forEach(button => {
-  button.addEventListener('mouseenter', () => {
-    gsap.to(button, {
-      y: -5,
-      scale: 1.05,
-      duration: 0.3,
-      ease: "power2.out"
+document
+  .querySelectorAll(".cta-button-whatsapp, .cta-button-call")
+  .forEach((button) => {
+    button.addEventListener("mouseenter", () => {
+      gsap.to(button, {
+        y: -5,
+        scale: 1.05,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    });
+
+    button.addEventListener("mouseleave", () => {
+      gsap.to(button, {
+        y: 0,
+        scale: 1,
+        duration: 0.7,
+        ease: "elastic.out(1, 0.5)",
+      });
     });
   });
-  
-  button.addEventListener('mouseleave', () => {
-    gsap.to(button, {
-      y: 0,
-      scale: 1,
-      duration: 0.7,
-      ease: "elastic.out(1, 0.5)"
-    });
-  });
-});
 // Limpa will-change após as animações para liberar recursos
 ScrollTrigger.addEventListener("refresh", () => {
   animatedElements.forEach((el) => {
@@ -464,5 +506,29 @@ ScrollTrigger.addEventListener("refresh", () => {
   });
 });
 
-// Força uma atualização do ScrollTrigger após o carregamento
-ScrollTrigger.refresh();
+const continueBtn = document.querySelector(".continue-application");
+
+function checkButtonPosition() {
+  // só roda se for mobile (ex: menos que 768px)
+  if (window.innerWidth >= 768) {
+    continueBtn.classList.remove("hover-sim");
+    return;
+  }
+
+  const rect = continueBtn.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  const buttonCenter = rect.top + rect.height / 2;
+  const screenCenter = windowHeight / 2;
+  const threshold = windowHeight * 0.2; // 20% da altura da tela
+
+  if (Math.abs(buttonCenter - screenCenter) < threshold) {
+    continueBtn.classList.add("hover-sim");
+  } else {
+    continueBtn.classList.remove("hover-sim");
+  }
+}
+
+window.addEventListener("scroll", checkButtonPosition);
+window.addEventListener("resize", checkButtonPosition);
+checkButtonPosition(); // check on load

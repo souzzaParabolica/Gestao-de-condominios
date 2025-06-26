@@ -227,6 +227,7 @@ footer {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     transform: translateY(0);
+
 }
 
 .cta-button:hover {
@@ -436,7 +437,35 @@ footer input::placeholder {
     color: var(--color);
     background-color: var(--background);
         /* background fix */
+        overflow: hidden;
+            /* Importante para conter os elementos internos */
+            transform: translateZ(0);
+            /* Força aceleração por hardware */
+            backface-visibility: hidden;
+            /* Elimina artefatos visuais */
+            will-change: transform;
+            /* Otimiza para animações */
+            filter: none !important;
+            /* Garante que não haja blur aplicado */
     }
+        .continue-application {
+            /* Garante renderização nítida */
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            backface-visibility: hidden;
+            image-rendering: optimizeQuality;
+        }
+    
+        /* Otimização específica para o SVG */
+        .continue-application svg {
+            shape-rendering: geometricPrecision;
+            image-rendering: crisp-edges;
+        }
+    
+        /* Força aceleração GPU nos elementos internos */
+        .continue-application>div>* {
+            transform: translateZ(0);
+            will-change: transform;     }
 
 .continue-application>div {
     top: 0;
@@ -612,4 +641,20 @@ footer input::placeholder {
 
 .continue-application:hover>div {
     background: var(--background-left);
+}
+
+.continue-application.hover-sim {
+    /* Tudo que você faz no :hover */
+    --cx: 2px;
+    --bg: var(--background-hover);
+    background: var(--background-hover);
+    color: var(--color);
+    --fx: -40px;
+    --fr: -60deg;
+    --fd: .15s;
+    --fds: 0s;
+    --pbx: 3px;
+    --pby: -3px;
+    --pbd: .15s;
+    --pex: -24px;
 }
