@@ -404,6 +404,59 @@ ScrollTrigger.matchMedia({
     });
   },
 });
+
+ // Animação para o CTA entre seções
+ gsap.to(".cta-entre-secoes", {
+  opacity: 1,
+  y: 0,
+  duration: 1,
+  ease: "back.out(1.2)",
+  scrollTrigger: {
+    trigger: ".cta-entre-secoes",
+    start: "top 80%",
+    toggleActions: "play none none none",
+  }
+});
+
+// Animação dos botões do CTA
+gsap.to(".cta-button-whatsapp", {
+  y: -3,
+  duration: 1.5,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut",
+  delay: 0.5
+});
+
+gsap.to(".cta-button-call", {
+  y: -3,
+  duration: 1.8,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut",
+  delay: 0.8
+});
+
+// Efeitos hover nos botões do CTA
+document.querySelectorAll('.cta-button-whatsapp, .cta-button-call').forEach(button => {
+  button.addEventListener('mouseenter', () => {
+    gsap.to(button, {
+      y: -5,
+      scale: 1.05,
+      duration: 0.3,
+      ease: "power2.out"
+    });
+  });
+  
+  button.addEventListener('mouseleave', () => {
+    gsap.to(button, {
+      y: 0,
+      scale: 1,
+      duration: 0.7,
+      ease: "elastic.out(1, 0.5)"
+    });
+  });
+});
 // Limpa will-change após as animações para liberar recursos
 ScrollTrigger.addEventListener("refresh", () => {
   animatedElements.forEach((el) => {

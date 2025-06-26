@@ -309,3 +309,62 @@ footer input::placeholder {
 .bg-gradient-to-r.from-\[\#F0C75E\].to-\[\#e0b84d\] {
     background: linear-gradient(135deg, #F0C75E 0%, #e0b84d 100%);
 }
+
+/* Estilos do CTA entre seções */
+.cta-entre-secoes {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.cta-button-whatsapp,
+.cta-button-call {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateY(0);
+}
+
+.cta-button-whatsapp:hover,
+.cta-button-call:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button-whatsapp:active,
+.cta-button-call:active {
+    transform: translateY(1px);
+}
+
+/* Efeito pulsante no CTA */
+@keyframes pulse-gold {
+    0% {
+        box-shadow: 0 0 0 0 rgba(240, 199, 94, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(240, 199, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(240, 199, 94, 0);
+    }
+}
+
+.cta-button-call:hover {
+    animation: pulse-gold 1.5s infinite;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cta-entre-secoes {
+        text-align: center;
+    }
+
+    .button-group {
+        width: 100%;
+    }
+
+    .cta-button-whatsapp,
+    .cta-button-call {
+        width: 100%;
+    } }
