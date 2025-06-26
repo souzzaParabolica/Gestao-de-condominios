@@ -371,7 +371,7 @@ ScrollTrigger.matchMedia({
       scrollTrigger: {
         trigger: ".secao-depoimentos",
         start: "top 50%",
-        end: "top 10%",
+        end: "top 40%",
         scrub: 1.5,
         markers: false,
       },
@@ -509,12 +509,6 @@ ScrollTrigger.addEventListener("refresh", () => {
 const continueBtn = document.querySelector(".continue-application");
 
 function checkButtonPosition() {
-  // só roda se for mobile (ex: menos que 768px)
-  if (window.innerWidth >= 768) {
-    continueBtn.classList.remove("hover-sim");
-    return;
-  }
-
   const rect = continueBtn.getBoundingClientRect();
   const windowHeight = window.innerHeight;
 
@@ -531,4 +525,7 @@ function checkButtonPosition() {
 
 window.addEventListener("scroll", checkButtonPosition);
 window.addEventListener("resize", checkButtonPosition);
-checkButtonPosition(); // check on load
+
+// Checar na carga também
+checkButtonPosition();
+
