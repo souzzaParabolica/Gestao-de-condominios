@@ -428,15 +428,15 @@ gsap.to(".cta-button-call", {
   delay: 0.8
 });
 
+// Animação quase imperceptível
 gsap.to(".primeiro-cta", {
-  y: -1,
+  y: -4,
   duration: 1.5,
   repeat: -1,
   yoyo: true,
   ease: "sine.inOut",
-  delay: 0.5,
+  delay: 1
 });
-
 // Efeitos hover nos botões do CTA
 document.querySelectorAll('.cta-button-whatsapp, .cta-button-call').forEach(button => {
   button.addEventListener('mouseenter', () => {

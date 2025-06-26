@@ -396,3 +396,6 @@ footer input::placeholder {
 #back-to-top:focus-visible {
     outline: 2px solid #F0C75E;
     outline-offset: 2px; }
+
+        .primeiro-cta {
+            will-change: transform;     }
