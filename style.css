@@ -154,9 +154,19 @@ body {
 }
 
 .card {
-    background-image: linear-gradient(45deg, #3D3D3D 51%, #7A7A7A);
+    background: linear-gradient(45deg, #3D3D3D 51%, #7A7A7A);
+    background-size: 200% 200%;
+    transition: background-position 0.5s ease-in-out;
 }
 
+.card:hover {
+    background-position: 50% center;
+}
+
+.cards {
+    perspective: 1000px;
+    /* opcional pra um efeito 3D */
+}
 
 .button:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -434,39 +444,41 @@ footer input::placeholder {
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
     padding: 17px 29px 17px 69px;
-    transition: all  0.3s;
+    transition: all 0.3s;
     color: var(--color);
     background-color: var(--background);
-        /* background fix */
-        overflow: hidden;
-            /* Importante para conter os elementos internos */
-            transform: translateZ(0);
-            /* Força aceleração por hardware */
-            backface-visibility: hidden;
-            /* Elimina artefatos visuais */
-            will-change: transform;
-            /* Otimiza para animações */
-            filter: none !important;
-            /* Garante que não haja blur aplicado */
-    }
-        .continue-application {
-            /* Garante renderização nítida */
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            backface-visibility: hidden;
-            image-rendering: optimizeQuality;
-        }
-    
-        /* Otimização específica para o SVG */
-        .continue-application svg {
-            shape-rendering: geometricPrecision;
-            image-rendering: crisp-edges;
-        }
-    
-        /* Força aceleração GPU nos elementos internos */
-        .continue-application>div>* {
-            transform: translateZ(0);
-            will-change: transform;     }
+    /* background fix */
+    overflow: hidden;
+    /* Importante para conter os elementos internos */
+    transform: translateZ(0);
+    /* Força aceleração por hardware */
+    backface-visibility: hidden;
+    /* Elimina artefatos visuais */
+    will-change: transform;
+    /* Otimiza para animações */
+    filter: none !important;
+    /* Garante que não haja blur aplicado */
+}
+
+.continue-application {
+    /* Garante renderização nítida */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    backface-visibility: hidden;
+    image-rendering: optimizeQuality;
+}
+
+/* Otimização específica para o SVG */
+.continue-application svg {
+    shape-rendering: geometricPrecision;
+    image-rendering: crisp-edges;
+}
+
+/* Força aceleração GPU nos elementos internos */
+.continue-application>div>* {
+    transform: translateZ(0);
+    will-change: transform;
+}
 
 .continue-application>div {
     top: 0;
