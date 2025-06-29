@@ -156,11 +156,12 @@ body {
 .card {
     background: linear-gradient(45deg, #3D3D3D 51%, #7A7A7A);
     background-size: 200% 200%;
-    transition: background-position 0.5s ease-in-out;
+    transition: background-position 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
     background-position: 50% center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cards {
@@ -179,38 +180,6 @@ img {
 
 .container {
     overflow-x: hidden;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-        /* Move apenas metade do comprimento */
-    }
-}
-
-.scroller {
-    opacity: 1;
-    display: flex;
-    width: max-content;
-    /* Largura baseada no conteúdo */
-    animation: scroll 20s linear infinite;
-}
-
-.fade-mask {
-    -webkit-mask-image: linear-gradient(to right,
-            transparent 0%,
-            black 10%,
-            black 90%,
-            transparent 100%);
-    mask-image: linear-gradient(to right,
-            transparent 0%,
-            black 10%,
-            black 90%,
-            transparent 100%);
 }
 
 /* Estilos gerais do footer */
