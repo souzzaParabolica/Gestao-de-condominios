@@ -250,3 +250,38 @@ function showNewsletterMessage() {
     message.classList.add("hidden");
   }, 5000);
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const splineViewer = document.querySelector("spline-viewer");
+  const socialMenu = document.getElementById("socialMenu");
+  const closeMenu = document.getElementById("closeMenu");
+  const overlay = document.createElement("div");
+  overlay.className = "overlay";
+  document.body.appendChild(overlay);
+
+  // Adiciona evento de clique ao robô do Spline
+  splineViewer.addEventListener("click", function () {
+    socialMenu.classList.add("active");
+    overlay.classList.add("active");
+    setTimeout(() => {
+      socialMenu.style.opacity = "1";
+    }, 10);
+  });
+
+  // Fecha o menu quando clicar no botão de fechar
+  closeMenu.addEventListener("click", function () {
+    socialMenu.style.opacity = "0";
+    setTimeout(() => {
+      socialMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    }, 300);
+  });
+
+  // Fecha o menu quando clicar no overlay
+  overlay.addEventListener("click", function () {
+    socialMenu.style.opacity = "0";
+    setTimeout(() => {
+      socialMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    }, 300);
+  });
+});

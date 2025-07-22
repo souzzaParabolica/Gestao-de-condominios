@@ -85,7 +85,7 @@
   <body class="bg-[#1e1e1e]">
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.33/build/spline-viewer.js"></script>
-  <spline-viewer class="fixed w-[20%] h-[20%] xl:w-[25%] xl:h-[25%] 2xl:w-[25%] 2xl:h-[25%] z-40 top-[80%] left-[78%] xl:top-[75%] xl:left-[75%] 2xl:top-[75%] 2xl:left-[75%]"  url="https://prod.spline.design/hPVZyAqF9-LbQqpP/scene.splinecode"></spline-viewer>
+  <spline-viewer class="fixed cursor-pointer w-[20%] h-[20%] xl:w-[25%] xl:h-[25%] 2xl:w-[25%] 2xl:h-[25%] z-40 top-[80%] left-[78%] xl:top-[75%] xl:left-[75%] 2xl:top-[75%] 2xl:left-[75%]"  url="https://prod.spline.design/hPVZyAqF9-LbQqpP/scene.splinecode"></spline-viewer>
     <main class="font-[poppins]">
       <div
         class="hero pt-[4rem] lg:pt-0 xl:pt-0 2xl:pt-0 xl:px-[3rem] 2xl:px-[3rem] relative w-screen xl:h-[100dvh] 2xl:h-[100dvh] flex flex-col lg:flex-row xl:flex-row 2xl:flex-row 2xl:items-normal lg:items-normal xl:items-normal justify-center items-center font-[poppins] lg:gap-0 xl:gap-0 2xl:gap-0 gap-10"
@@ -641,5 +641,30 @@
     <script src="animations.js"></script>
     <script src="script.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+
+ <!-- Menu de Redes Sociais -->
+<div id="socialMenu" class="social-menu hidden">
+  <div class="social-header">
+    <h3>Entre em Contato</h3>
+    <button id="closeMenu" class="close-btn">&times;</button>
+  </div>
+  <div class="social-links">
+    <a href="https://instagram.com/seuinstagram" target="_blank" class="social-link instagram">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://wa.me/seunumerodowhatsapp" target="_blank" class="social-link whatsapp">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="https://linkedin.com/in/seulinkedin" target="_blank" class="social-link linkedin">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="mailto:seuemail@exemplo.com" class="social-link email">
+      <i class="fas fa-envelope"></i> E-mail
+    </a>
+  </div>
+</div>
+
+<!-- Adicione o Font Awesome para os ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </body>
 </html>
