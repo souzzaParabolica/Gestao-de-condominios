@@ -249,8 +249,7 @@ function showNewsletterMessage() {
   setTimeout(() => {
     message.classList.add("hidden");
   }, 5000);
-}
-document.addEventListener("DOMContentLoaded", function () {
+}document.addEventListener("DOMContentLoaded", function () {
   const splineViewer = document.querySelector("spline-viewer");
   const socialMenu = document.getElementById("socialMenu");
   const closeMenu = document.getElementById("closeMenu");
@@ -258,30 +257,45 @@ document.addEventListener("DOMContentLoaded", function () {
   overlay.className = "overlay";
   document.body.appendChild(overlay);
 
-  // Adiciona evento de clique ao robô do Spline
-  splineViewer.addEventListener("click", function () {
+  // Função para abrir o menu
+  function openMenu() {
     socialMenu.classList.add("active");
     overlay.classList.add("active");
     setTimeout(() => {
       socialMenu.style.opacity = "1";
     }, 10);
-  });
+  }
 
-  // Fecha o menu quando clicar no botão de fechar
-  closeMenu.addEventListener("click", function () {
+  // Função para fechar o menu
+  function closeMenuHandler() {
     socialMenu.style.opacity = "0";
     setTimeout(() => {
       socialMenu.classList.remove("active");
       overlay.classList.remove("active");
     }, 300);
-  });
+  }
 
-  // Fecha o menu quando clicar no overlay
-  overlay.addEventListener("click", function () {
-    socialMenu.style.opacity = "0";
-    setTimeout(() => {
-      socialMenu.classList.remove("active");
-      overlay.classList.remove("active");
-    }, 300);
+  // Eventos para desktop
+  splineViewer.addEventListener("click", openMenu);
+
+  // Eventos para mobile
+  splineViewer.addEventListener(
+    "touchstart",
+    function (e) {
+      e.preventDefault(); // Previne o comportamento padrão
+      openMenu();
+    },
+    { passive: false }
+  ); // Importante para permitir preventDefault
+
+  // Fecha o menu
+  closeMenu.addEventListener("click", closeMenuHandler);
+  overlay.addEventListener("click", closeMenuHandler);
+
+  // Fecha ao pressionar ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeMenuHandler();
+    }
   });
 });
