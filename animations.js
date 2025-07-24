@@ -257,6 +257,30 @@ ScrollTrigger.matchMedia({
 ScrollTrigger.matchMedia({
   // DESKTOP
   "(min-width: 768px)": function () {
+    gsap.to(".servicos", {
+      backgroundImage: "linear-gradient(135deg, #1e1e1e, #929292a0)",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".servicos",
+        start: "top 60%",
+        end: "top -30%",
+        scrub: 1.5,
+        markers: false,
+      },
+    });
+  },
+
+  // MOBILE
+  "(max-width: 767px)": function () {
+    // Não faz nada no mobile, deixa o CSS reinar soberano ✊
+  },
+});
+
+
+
+ScrollTrigger.matchMedia({
+  // DESKTOP
+  "(min-width: 768px)": function () {
     gsap.from(".titulo-servicos, .desc-servicos", {
       opacity: 0,
       filter: "blur(2px)",
