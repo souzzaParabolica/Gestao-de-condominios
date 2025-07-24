@@ -135,6 +135,7 @@ ScrollTrigger.matchMedia({
   "(min-width: 768px)": function () {
     gsap.from(".sobremim", {
       opacity: 0,
+      filter: "blur(2px)",
       scale: 0.9,
       y: 50,
       scrollTrigger: {
@@ -148,6 +149,7 @@ ScrollTrigger.matchMedia({
 
     gsap.from(".container p", {
       opacity: 0,
+      filter: "blur(2px)",
       x: 30,
       scrollTrigger: {
         trigger: ".container",
@@ -175,6 +177,7 @@ ScrollTrigger.matchMedia({
   "(max-width: 767px)": function () {
     gsap.from(".sobremim", {
       opacity: 0,
+      filter: "blur(2px)",
       scale: 0.9,
       y: 50,
       scrollTrigger: {
@@ -202,6 +205,7 @@ ScrollTrigger.matchMedia({
       ".container p",
       {
         opacity: 0,
+        filter: "blur(2px)",
         transform: "scale(0.95)",
         duration: 1,
         scrollTrigger: {
@@ -222,6 +226,7 @@ ScrollTrigger.matchMedia({
   "(min-width: 768px)": function () {
     gsap.to(".sobre-mim", {
       opacity: 0,
+      filter: "blur(2px)",
       y: -100,
       scrollTrigger: {
         trigger: ".servicos",
@@ -237,6 +242,7 @@ ScrollTrigger.matchMedia({
   "(max-width: 767px)": function () {
     gsap.to(".sobre-mim", {
       opacity: 0,
+      filter: "blur(2px)",
       scrollTrigger: {
         trigger: ".servicos",
         start: "top 55%",
@@ -253,6 +259,7 @@ ScrollTrigger.matchMedia({
   "(min-width: 768px)": function () {
     gsap.from(".titulo-servicos, .desc-servicos", {
       opacity: 0,
+      filter: "blur(2px)",
       scale: 0.98,
       duration: 1,
       stagger: 0.5,
@@ -270,6 +277,7 @@ ScrollTrigger.matchMedia({
   "(max-width: 767px)": function () {
     gsap.from(".titulo-servicos, .desc-servicos", {
       opacity: 0,
+      filter: "blur(2px)",
       scale: 0.98,
       duration: 1,
       stagger: 0.5,
@@ -289,6 +297,7 @@ ScrollTrigger.matchMedia({
   "(min-width: 768px)": function () {
     gsap.from(".cards .card", {
       opacity: 0,
+      filter: "blur(2px)",
       y: 50,
       scale: 0.98,
       duration: 6,
@@ -309,6 +318,7 @@ ScrollTrigger.matchMedia({
     document.querySelectorAll(".cards .card").forEach((card) => {
       gsap.from(card, {
         opacity: 0,
+        filter: "blur(2px)",
         y: 50,
         scale: 0.98,
         duration: 1.5,
@@ -329,6 +339,7 @@ ScrollTrigger.matchMedia({
   "(min-width: 768px)": function () {
     gsap.from(".titulo-depoimentos, .desc-depoimentos", {
       opacity: 0,
+      filter: "blur(2px)",
       scale: 0.98,
       duration: 1,
       stagger: 0.5,
@@ -346,6 +357,7 @@ ScrollTrigger.matchMedia({
   "(max-width: 767px)": function () {
     gsap.from(".titulo-depoimentos, .desc-depoimentos", {
       opacity: 0,
+      filter: "blur(2px)",
       scale: 0.98,
       duration: 1,
       stagger: 0.5,
@@ -365,6 +377,7 @@ ScrollTrigger.matchMedia({
   "(min-width: 768px)": function () {
     gsap.from(".carrossel-depoimentos", {
       opacity: 0,
+      filter: "blur(2px)",
       scale: 0.98,
       duration: 1,
       stagger: 0.5,
@@ -382,6 +395,7 @@ ScrollTrigger.matchMedia({
   "(max-width: 767px)": function () {
     gsap.from(".carrossel-depoimentos", {
       opacity: 0,
+      filter: "blur(2px)",
       scale: 0.98,
       duration: 1,
       stagger: 0.5,
