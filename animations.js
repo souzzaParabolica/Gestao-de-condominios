@@ -258,12 +258,12 @@ ScrollTrigger.matchMedia({
   // DESKTOP
   "(min-width: 768px)": function () {
     gsap.to(".servicos", {
-      backgroundImage: "linear-gradient(135deg, #1e1e1e, #929292a0)",
+      backgroundImage: "linear-gradient(135deg, #1e1e1e 70%, #ffac8b5e)",
       ease: "none",
       scrollTrigger: {
         trigger: ".servicos",
         start: "top 60%",
-        end: "top -30%",
+        end: "top -50%",
         scrub: 1.5,
         markers: false,
       },
