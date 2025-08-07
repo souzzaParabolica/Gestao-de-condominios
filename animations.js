@@ -276,8 +276,6 @@ ScrollTrigger.matchMedia({
   },
 });
 
-
-
 ScrollTrigger.matchMedia({
   // DESKTOP
   "(min-width: 768px)": function () {
@@ -481,39 +479,43 @@ gsap.set(".continue-application", {
   willChange: "transform",
   transformPerspective: 1000,
   backfaceVisibility: "hidden",
-  force3D: true
+  force3D: true,
 });
 
 // Timeline específica para este botão
 const continueTl = gsap.timeline({
   repeat: -1,
   yoyo: true,
-  repeatDelay: 0.5
+  repeatDelay: 0.5,
 });
 
-continueTl.to(".continue-application", {
-  y: -2,
-  duration: 1.8,
-  ease: "power1.inOut",
-  modifiers: {
-    y: function(y) {
-      // Arredonda o valor para evitar subpixels que causam embaçado
-      return Math.round(y * 10) / 10;
-    }
-  }
-})
-.to(".continue-application", {
-  y: 0,
-  duration: 1.8,
-  ease: "power1.inOut"
-});
+continueTl
+  .to(".continue-application", {
+    y: -2,
+    duration: 1.8,
+    ease: "power1.inOut",
+    modifiers: {
+      y: function (y) {
+        // Arredonda o valor para evitar subpixels que causam embaçado
+        return Math.round(y * 10) / 10;
+      },
+    },
+  })
+  .to(".continue-application", {
+    y: 0,
+    duration: 1.8,
+    ease: "power1.inOut",
+  });
 
 // Otimização para elementos internos do botão
-gsap.set(".continue-application svg, .continue-application .pencil, .continue-application .folder", {
-  transformStyle: "preserve-3d",
-  backfaceVisibility: "hidden",
-  willChange: "transform"
-});
+gsap.set(
+  ".continue-application svg, .continue-application .pencil, .continue-application .folder",
+  {
+    transformStyle: "preserve-3d",
+    backfaceVisibility: "hidden",
+    willChange: "transform",
+  }
+);
 
 // Efeitos hover nos botões do CTA
 document
@@ -566,4 +568,3 @@ window.addEventListener("resize", checkButtonPosition);
 
 // Checar na carga também
 checkButtonPosition();
-

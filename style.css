@@ -640,6 +640,7 @@ footer input::placeholder {
     --pbd: .15s;
     --pex: -24px;
 }
+
 /* Estilos do Menu de Redes Sociais */
 .social-menu {
     backdrop-filter: blur(30px) saturate(180%);
@@ -729,20 +730,4 @@ footer input::placeholder {
 .email {
     background: #EA4335;
     color: white;
-}
-
-/* Overlay para quando o menu estiver aberto */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-    display: none;
-}
-
-.overlay.active {
-    display: block;
 }
