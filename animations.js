@@ -280,13 +280,13 @@ ScrollTrigger.matchMedia({
   // DESKTOP
   "(min-width: 768px)": function () {
     gsap.to(".sobre-mim", {
-      backgroundImage: "linear-gradient(360deg, #1e1e1e 70%, #FFAB8B2E)",
+      backgroundImage: "linear-gradient(290deg, #1e1e1e 80%, #FFAB8B2E)",
       scrollTrigger: {
         trigger: ".sobre-mim",
         start: "top 80%",
-        end: "top -50%",
-        scrub: 1.5,
-        markers: false,
+        end: "top 0%",
+        scrub: 2,
+        markers: true,
       },
     });
   },
