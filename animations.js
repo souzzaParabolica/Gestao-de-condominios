@@ -46,7 +46,7 @@ ScrollTrigger.matchMedia({
   "(min-width: 768px)": function () {
     const anim = gsap.to(".hero", {
       opacity: 0,
-      y: -100,
+      backgroundImage: "linear-gradient(292, #1e1e1e 70%, #1e1e1e)",
       scrollTrigger: {
         trigger: ".sobre-mim",
         start: "top 55%",
@@ -266,6 +266,27 @@ ScrollTrigger.matchMedia({
         end: "top -50%",
         scrub: 1.5,
         markers: false,
+      },
+    });
+  },
+
+  // MOBILE
+  "(max-width: 767px)": function () {
+    // Não faz nada no mobile, deixa o CSS reinar soberano ✊
+  },
+});
+
+ScrollTrigger.matchMedia({
+  // DESKTOP
+  "(min-width: 768px)": function () {
+    gsap.to(".sobre-mim", {
+      backgroundImage: "linear-gradient(360deg, #1e1e1e 70%, #FFAB8B2E)",
+      scrollTrigger: {
+        trigger: ".sobre-mim",
+        start: "top 80%",
+        end: "top -50%",
+        scrub: 1.5,
+        markers: true,
       },
     });
   },
