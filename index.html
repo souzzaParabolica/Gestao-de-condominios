@@ -86,78 +86,241 @@
   </head>
 
   <body class="bg-[#1e1e1e]">
-
     <main class="font-[poppins]">
-      <div
-        class="hero pt-[4rem] lg:pt-0 xl:pt-0 2xl:pt-0 xl:px-[3rem] 2xl:px-[3rem] relative w-screen xl:h-[100dvh] 2xl:h-[100dvh] flex flex-col lg:flex-row xl:flex-row 2xl:flex-row 2xl:items-normal lg:items-normal xl:items-normal justify-center items-center font-[poppins] lg:gap-0 xl:gap-0 2xl:gap-0 gap-10"
+      <section
+        class="primeira relative w-full min-h-screen min-h-dvh flex items-center justify-center px-4 py-8 md:py-16 lg:py-0 overflow-hidden bg-[#1a1a1a] font-poppins"
       >
-        <div
-          class="esq lg:w-[50%] 2xl:w-[50%] xl:w-[50%] flex flex-col items-center justify-center gap-[2rem]"
-        >
-          <h1
-            class="text-3xl md:text-4xl xl:text-[50px] lg:text-[50px] 2xl:text-[50px] lg:text-center text-white font-bold"
-          >
-            SÍNDICA PROFISSIONAL
-          </h1>
-          <p
-            class="text-white px-1 text-[28px] text-center lg:w-[77%] xl:w-[77%] 2xl:w-[77%] font-[200]"
-          >
-            Te ajudo a ter uma administração condominial com eficiência e
-            qualidade.
-          </p>
-          <button
-            onclick="window.open('https://wa.me/5511966880540?text=Olá,%20tenho%20interesse%20em%20saber%20mais%20sobre%20a%20gestão%20de%20condomínios.%20Podemos%20conversar?%20🚀', '_blank')"
-            class="button primeiro-cta items-center text-white md:text-xl text-[20px] lg:text-[25px] 2xl:text-[20px] flex flex-row gap-8"
-          >
-            Fale comigo
-            <span class="w-6 h-6" data-lucide="phone-outgoing"> </span>
-          </button>
+        <!-- Padrão de fundo geométrico -->
+        <div class="absolute inset-0 opacity-10">
+          <div
+            class="absolute top-0 left-0 w-full h-full"
+            style="
+              background-image: radial-gradient(
+                circle,
+                #f0c75e 1px,
+                transparent 1px
+              );
+              background-size: 40px 40px;
+            "
+          ></div>
         </div>
 
-        <img
-          class="lg:w-[50%] xl:w-[45%] 2xl:w-[40%] p-4 2xl:px-0 2xl:rounded-t-[50px] 2xl:rounded-br-[50px] 2xl:rounded-t-[50px] 2xl:rounded-bl-[318px] rounded-t-[50px] rounded-br-[50px] rounded-t-[50px] rounded-bl-[130px]"
-          src="445534208_325799700557451_4477202779554882686_n.webp"
-          alt="Síndica Ellen Carvalho"
-        />
-      </div>
+        <!-- Elementos decorativos dourados -->
+        <div
+          class="absolute top-1/4 -left-20 w-60 h-60 bg-[#F0C75E] rounded-full opacity-5 animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-1/3 -right-20 w-40 h-40 bg-[#F0C75E] rounded-full opacity-5"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/4 w-24 h-24 bg-[#F0C75E] rounded-full opacity-10"
+        ></div>
 
-      <section
-        class="sobre-mim px-4 xl:px-0 2xl:px-0 xl:py-[3rem] 2xl:pt-[3rem] pt-[5rem] flex flex-col justify-center items-center xl:gap-0 2xl:gap-0 gap-10"
-      >
-        <h2
-          class="sobremim font-bold text-3xl md:text-[40px] lg:text-[50px] xl:text-[40px] 2xl:text-[50px] text-[#F0C75E]"
-        >
-          Um pouco sobre mim
-        </h2>
+        <!-- Linhas decorativas -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5">
+          <div
+            class="absolute top-20 left-1/4 w-px h-64 bg-gradient-to-b from-transparent via-[#F0C75E] to-transparent"
+          ></div>
+          <div
+            class="absolute bottom-10 right-1/3 w-64 h-px bg-gradient-to-r from-transparent via-[#F0C75E] to-transparent"
+          ></div>
+          <div
+            class="absolute top-1/3 right-20 w-32 h-px bg-gradient-to-l from-transparent via-[#F0C75E] to-transparent rotate-45"
+          ></div>
+        </div>
+
+        <!-- Decoração angular -->
+        <div
+          class="absolute top-10 left-10 w-16 h-16 border-t-4 border-l-4 border-[#F0C75E] opacity-20"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-16 h-16 border-b-4 border-r-4 border-[#F0C75E] opacity-20"
+        ></div>
 
         <div
-          class="container rounded-[30px] xl:mt-[3rem] 2xl:mt-[3rem] p-[20px] lg:gap-[50px] xl:gap-[50px] 2xl:gap-[85px] gap-10 flex flex-col lg:flex-row xl:flex-row 2xl:flex-row justify-center items-center"
+          class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 z-10"
         >
-          <img
-            class="rounded-[30px] lg:w-[50%] xl:w-[35%] 2xl:w-[40%] w-[90%]"
-            src="445534208_325799700557451_4477202779554882686_n.webp"
-            alt="Síndica Ellen Carvalho"
-          />
-          <p
-            class="text-white text-[15px] md:text-[20px] lg:text-[20px] xl:text-[20px] 2xl:text-[20px] space-y-[13px]"
+          <!-- Conteúdo de texto -->
+          <div
+            class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left gap-6 md:gap-8"
           >
-            Me chamo Ellen Carvalho, Bacharel em Direito e Síndica Profissional
-            desde 2015, com especialização em condomínios. <br />
-            <br />
-            Minha jornada começou como síndica moradora e, ao longo dos anos,
-            fui me especializando e aprimorando minhas habilidades <br /><br />
-            Com os feedbacks positivos que recebi, fui convidada a administrar
-            os condomínios vizinhos, uma tarefa que realizo com grande prazer e
-            que me motiva cada vez mais a me dedicar e me especializar. <br />
-            <br />
-            <span class="font-bold"
-              >Bacharel em Direito - Universidade Anhanguera; Direito
-              Condominial - Karpat advogados; <br />
-              Direito Condominial - Fundação Getúlio Vargas; <br />
-              Síndico Profissional I, II E III - Gábor Rh; <br />
-              Mediação e Arbitragem Condominal - Gábor Rh
-            </span>
-          </p>
+            <div class="relative">
+              <div
+                class="absolute -inset-4 bg-[#F0C75E] rounded-lg blur opacity-10"
+              ></div>
+              <h1
+                class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight relative"
+              >
+                <span class="text-[#F0C75E]">SÍNDICA</span> PROFISSIONAL
+              </h1>
+            </div>
+
+            <p
+              class="text-xl md:text-2xl lg:text-2xl text-white font-light leading-relaxed max-w-lg"
+            >
+              Te ajudo a ter uma administração condominial com eficiência e
+              qualidade.
+            </p>
+
+            <div class="relative group">
+              <div
+                class="absolute -inset-1 bg-[#F0C75E] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-300"
+              ></div>
+              <button
+                onclick="window.open('https://wa.me/5511966880540?text=Olá,%20tenho%20interesse%20em%20saber%20mais%20sobre%20a%20gestão%20de%20condomínios.%20Podemos%20conversar?%20🚀', '_blank')"
+                class="relative flex items-center gap-3 bg-gradient-to-r from-[#F0C75E] to-[#D4AF37] hover:from-[#D4AF37] hover:to-[#F0C75E] text-[#1a1a1a] font-semibold text-lg md:text-xl py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mt-4"
+              >
+                Fale comigo
+                <span class="w-5 h-5" data-lucide="phone-outgoing"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Imagem -->
+          <div class="w-full lg:w-1/2 flex justify-center relative">
+            <div class="relative w-full max-w-md">
+              <div
+                class="absolute -inset-4 bg-gradient-to-r from-[#F0C75E] to-[#D4AF37] rounded-3xl blur-lg opacity-20 animate-pulse"
+              ></div>
+              <img
+                class="relative w-full rounded-3xl shadow-xl transform transition-transform duration-500 hover:scale-105 z-10"
+                src="445534208_325799700557451_4477202779554882686_n.webp"
+                alt="Síndica Ellen Carvalho - Especialista em administração condominial"
+                loading="eager"
+              />
+              <!-- Decoração na imagem -->
+              <div
+                class="absolute -top-4 -left-4 w-16 h-16 bg-[#F0C75E] rounded-full opacity-20"
+              ></div>
+              <div
+                class="absolute -bottom-4 -right-4 w-12 h-12 bg-[#F0C75E] rounded-full opacity-20"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="sobre-mim px-4 xl:px-0 2xl:px-0 xl:py-[5rem] 2xl:py-[5rem] py-[5rem] relative overflow-hidden"
+      >
+        <!-- Elementos decorativos de fundo -->
+        <div
+          class="absolute -top-20 -right-20 w-60 h-60 bg-[#F0C75E] rounded-full opacity-5"
+        ></div>
+        <div
+          class="absolute -bottom-20 -left-20 w-40 h-40 bg-[#F0C75E] rounded-full opacity-5"
+        ></div>
+
+        <div class="max-w-7xl mx-auto">
+          <!-- Cabeçalho -->
+          <div class="text-center mb-12">
+            <h2
+              class="sobremim xl:flex xl:items-center xl:justify-center xl:h-[50px] 2xl:flex 2xl:items-center 2xl:justify-center 2xl:h-[50px] font-bold text-4xl md:text-[50px] lg:text-[60px] xl:text-[50px] 2xl:text-[60px] text-[#F0C75E] mb-6"
+            >
+              Um pouco sobre mim
+            </h2>
+            <div class="w-24 h-1 bg-[#F0C75E] mx-auto"></div>
+          </div>
+
+          <!-- Conteúdo Principal -->
+          <div
+            class="container relative bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d] rounded-3xl p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 shadow-2xl"
+          >
+            <!-- Imagem com destaque -->
+            <div class="relative lg:w-[45%] xl:w-[40%] 2xl:w-[35%]">
+              <img
+                class="rounded-3xl w-full shadow-xl transform hover:scale-105"
+                src="445534208_325799700557451_4477202779554882686_n.webp"
+                alt="Síndica Ellen Carvalho - Especialista em Gestão Condominial"
+              />
+              <!-- Decoração na imagem -->
+              <div
+                class="absolute -top-4 -left-4 w-16 h-16 bg-[#F0C75E] rounded-full opacity-20"
+              ></div>
+              <div
+                class="absolute -bottom-4 -right-4 w-12 h-12 bg-[#F0C75E] rounded-full opacity-20"
+              ></div>
+            </div>
+
+            <!-- Texto e Qualificações -->
+            <div class="lg:w-[55%] xl:w-[60%] 2xl:w-[65%]">
+              <p
+                class="text-white text-lg md:text-xl lg:text-xl leading-relaxed md:leading-loose mb-8"
+              >
+                <span class="text-[#F0C75E] font-semibold"
+                  >Me chamo Ellen Carvalho</span
+                >, Bacharel em Direito e Síndica Profissional desde 2015, com
+                especialização em condomínios.
+              </p>
+
+              <p
+                class="text-gray-300 text-base md:text-lg lg:text-lg leading-relaxed mb-8"
+              >
+                Minha jornada começou como síndica moradora e, ao longo dos
+                anos, fui me especializando e aprimorando minhas habilidades.
+                Com os feedbacks positivos que recebi, fui convidada a
+                administrar os condomínios vizinhos, uma tarefa que realizo com
+                grande prazer e que me motiva cada vez mais a me dedicar e me
+                especializar.
+              </p>
+
+              <!-- Cards de Qualificação -->
+              <div
+                class="bg-[#121212] rounded-2xl p-6 border border-[#F0C75E] border-opacity-20"
+              >
+                <h3
+                  class="text-[#F0C75E] font-bold text-xl mb-4 flex items-center gap-2"
+                >
+                  <span data-lucide="award" class="w-6 h-6"></span>
+                  Formação e Certificações
+                </h3>
+
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3">
+                    <span class="text-[#F0C75E] mt-1">•</span>
+                    <span class="text-white text-sm md:text-base"
+                      >Bacharel em Direito - Universidade Anhanguera</span
+                    >
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="text-[#F0C75E] mt-1">•</span>
+                    <span class="text-white text-sm md:text-base"
+                      >Direito Condominial - Karpat advogados</span
+                    >
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="text-[#F0C75E] mt-1">•</span>
+                    <span class="text-white text-sm md:text-base"
+                      >Direito Condominial - Fundação Getúlio Vargas</span
+                    >
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="text-[#F0C75E] mt-1">•</span>
+                    <span class="text-white text-sm md:text-base"
+                      >Síndico Profissional I, II e III - Gábor RH</span
+                    >
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="text-[#F0C75E] mt-1">•</span>
+                    <span class="text-white text-sm md:text-base"
+                      >Mediação e Arbitragem Condominal - Gábor RH</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Pequeno -->
+              <div class="mt-6">
+                <a
+                  href="#contato"
+                  class="inline-flex items-center gap-2 text-[#F0C75E] hover:text-white transition-colors text-sm md:text-base"
+                >
+                  <span data-lucide="message-circle" class="w-4 h-4"></span>
+                  Vamos conversar sobre seu condomínio?
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -191,7 +354,7 @@
           >
             <span class="w-9 h-9 text-white" data-lucide="brain"></span>
             <h3 class="text-[#F0C75E] mt-9 text-xl">Gestão inteligente</h3>
-            <p class="text-white mt-4">
+            <p class="text-white mt-2">
               Experiência e especialização garantem uma administração organizada
               e transparente
             </p>
@@ -202,7 +365,7 @@
           >
             <span class="w-9 h-9 text-white" data-lucide="handshake"></span>
             <h3 class="text-[#F0C75E] mt-9 text-xl">Resolução de conflitos</h3>
-            <p class="text-white mt-4">
+            <p class="text-white mt-2">
               Habilidades para mediar e resolver problemas de forma imparcial
             </p>
           </div>
@@ -215,7 +378,7 @@
               data-lucide="wallet-minimal"
             ></span>
             <h3 class="text-[#F0C75E] mt-9 text-xl">Economia</h3>
-            <p class="text-white mt-4">
+            <p class="text-white mt-2">
               Conhecimentos para negociar melhores contratos e reduzir custos
             </p>
           </div>
@@ -225,7 +388,7 @@
           >
             <span class="w-9 h-9 text-white" data-lucide="scale"></span>
             <h3 class="text-[#F0C75E] mt-9 text-xl">Legalidade</h3>
-            <p class="text-white mt-4">
+            <p class="text-white mt-2">
               Manutenção do condomínio em conformidade com as leis e
               regulamentos
             </p>
@@ -236,7 +399,7 @@
           >
             <span class="w-9 h-9 text-white" data-lucide="settings"></span>
             <h3 class="text-[#F0C75E] mt-9 text-xl">Gestão técnica</h3>
-            <p class="text-white mt-4">
+            <p class="text-white mt-2">
               Acompanhamento rigoroso da segurança e das manutenções necessárias
             </p>
           </div>

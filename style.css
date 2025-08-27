@@ -81,50 +81,9 @@ body {
     transform: translateY(-2px);
 }
 
-.button {
-    background-color: #1BFD9C;
-    font-size: 15px;
-    padding: 0.7em 2.7em;
-    letter-spacing: 0.06em;
-    position: relative;
-    font-family: inherit;
-    border-radius: 0.6em;
-    overflow: hidden;
-    transition: all 0.3s;
-    line-height: 1.4em;
-    border: 2px solid #1BFD9C;
-    background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
-    color: #1BFD9C;
-    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
-}
-
-.button:hover {
-    color: #82ffc9;
-    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
-}
-
-.button:before {
-    content: "";
-    position: absolute;
-    left: -4em;
-    width: 4em;
-    height: 100%;
-    top: 0;
-    transition: transform .4s ease-in-out;
-    background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
-}
-
-.button:hover:before {
-    transform: translateX(20em);
-}
-
 .hero {
     background-image: linear-gradient(292deg, #1e1e1e 69%, #FFAB8B2E);
     overflow: hidden;
-}
-
-.container {
-    background-image: linear-gradient(to bottom, #4D4D4D, #181818);
 }
 
 .arrow-down {
@@ -154,9 +113,19 @@ body {
 }
 
 .card {
-    background: linear-gradient(45deg, #3D3D3D 51%, #7A7A7A);
+    background: linear-gradient(45deg, #303030 51%, #5d5d5d);
     background-size: 200% 200%;
     transition: background-position 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #F0C75E, transparent);
 }
 
 .card:hover {
@@ -731,3 +700,45 @@ footer input::placeholder {
     background: #EA4335;
     color: white;
 }
+
+/* Animações para a seção Sobre Mim */
+.sobre-mim {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #F0C75E, transparent);
+}
+
+/* Efeito de brilho suave */
+.sobremim {
+    background: linear-gradient(135deg, #F0C75E 0%, #e0b84d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .sobre-mim {
+        padding: 3rem 1rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+}
+

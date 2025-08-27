@@ -1,85 +1,45 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// Selecionar os elementos
-const hero = document.querySelector(".hero");
-const h1 = document.querySelector(".hero h1");
-const p = document.querySelector(".hero p");
-const button = document.querySelector(".hero button");
-const img = document.querySelector(".hero img");
+// Verificar se GSAP está disponível
+    if (typeof gsap !== 'undefined') {
+      // Configurar estado inicial dos elementos da primeira seção
+      gsap.set("section.primeira", { opacity: 0 });
+      gsap.set("section.primeira .absolute", { opacity: 0 });
+      gsap.set("section.primeira h1", { opacity: 0, y: 30 });
+      gsap.set("section.primeira p", { opacity: 0, y: 20 });
+      gsap.set("section.primeira button", { opacity: 0, y: 20, scale: 0.9 });
+      gsap.set("section.primeira .relative img", { opacity: 0, scale: 1.1, rotationY: 5 });
 
-// Reset inicial - esconder elementos antes da animação
-gsap.set([h1, p, button, img], { autoAlpha: 0 });
-gsap.set(h1, { y: 50 });
-gsap.set(p, { y: 30 });
-gsap.set(button, { y: 20, scale: 0.8 });
-gsap.set(img, { x: 100, rotation: -5, scale: 0.9 });
+      // Animação de entrada para a primeira seção (MAIS RÁPIDO)
+      const heroTl = gsap.timeline();
+      
+      // Fundo e elementos decorativos primeiro
+      heroTl.to("section.primeira", { opacity: 1, duration: 0.3 })
+            .to("section.primeira .absolute", { opacity: .10, duration: 0.5, stagger: 0.05 }, "-=0.2")
+            
+            // Texto
+            .to("section.primeira h1", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, "-=0.3")
+            .to("section.primeira p", { opacity: 1, y: 0, duration: 0.4, ease: "power1.out" }, "-=0.2")
+            
+            // Imagem
+            .to("section.primeira .relative img", { 
+              opacity: 1, 
+              scale: 1, 
+              rotationY: 0, 
+              duration: 0.6, 
+              ease: "power2.out" 
+            }, "-=0.2")
+            
+            // Botão por último
+            .to("section.primeira button", { 
+              opacity: 1, 
+              y: 0, 
+              scale: 1, 
+              duration: 0.4, 
+              ease: "back.out(1.5)" 
+            }, "-=0.1");
+    }
 
-// Criar a timeline
-const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-// Animação principal
-tl.to(hero, { autoAlpha: 1, duration: 0.2 })
-  .to(h1, { y: 0, autoAlpha: 1, duration: 0.8 }, 0.2)
-  .to(p, { y: 0, autoAlpha: 1, duration: 0.6 }, 0.4)
-  .to(button, { y: 0, scale: 1, autoAlpha: 1, duration: 0.5 }, 0.6)
-  .to(img, { x: 0, rotation: 0, scale: 1, autoAlpha: 1, duration: 0.8 }, 0.3);
-
-// Efeito de brilho no botão ao passar o mouse
-button.addEventListener("mouseenter", () => {
-  gsap.to(button, {
-    scale: 1.05,
-    boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
-    duration: 0.3,
-  });
-});
-
-button.addEventListener("mouseleave", () => {
-  gsap.to(button, {
-    scale: 1,
-    boxShadow: "none",
-    duration: 0.3,
-  });
-});
-
-ScrollTrigger.matchMedia({
-  // DESKTOP
-  "(min-width: 768px)": function () {
-    const anim = gsap.to(".hero", {
-      opacity: 0,
-      backgroundImage: "linear-gradient(292, #1e1e1e 70%, #1e1e1e)",
-      scrollTrigger: {
-        trigger: ".sobre-mim",
-        start: "top 55%",
-        end: "top 0%",
-        scrub: 2,
-        markers: false,
-      },
-    });
-
-    return () => {
-      anim.kill();
-    };
-  },
-
-  // MOBILE
-  "(max-width: 767px)": function () {
-    const anim = gsap.to(".hero", {
-      opacity: 0,
-      y: 0, // 👈 FORÇA o y a ficar no lugar
-      scrollTrigger: {
-        trigger: ".sobre-mim",
-        start: "top 70%",
-        end: "top 50%",
-        scrub: 2,
-        markers: false,
-      },
-    });
-
-    return () => {
-      anim.kill();
-    };
-  },
-});
 
 gsap.from(".carrossel", {
   opacity: 0,
@@ -137,7 +97,7 @@ ScrollTrigger.matchMedia({
       opacity: 0,
       filter: "blur(2px)",
       scale: 0.9,
-      y: 50,
+      
       scrollTrigger: {
         trigger: ".sobre-mim",
         start: "top 55%",
@@ -225,9 +185,7 @@ ScrollTrigger.matchMedia({
   // DESKTOP
   "(min-width: 768px)": function () {
     gsap.to(".sobre-mim", {
-      opacity: 0,
       filter: "blur(2px)",
-      y: -100,
       scrollTrigger: {
         trigger: ".servicos",
         start: "top 55%",
@@ -241,7 +199,6 @@ ScrollTrigger.matchMedia({
   // MOBILE
   "(max-width: 767px)": function () {
     gsap.to(".sobre-mim", {
-      opacity: 0,
       filter: "blur(2px)",
       scrollTrigger: {
         trigger: ".servicos",
@@ -564,6 +521,35 @@ document
 ScrollTrigger.addEventListener("refresh", () => {
   animatedElements.forEach((el) => {
     el.style.willChange = "auto";
+  });
+});
+
+// Adicione ao seu GSAP existente
+gsap.to(".sobre-mim", {
+  opacity: 1,
+  y: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".sobre-mim",
+    start: "top 80%",
+    toggleActions: "play none none none",
+  }
+});
+
+// Animações dos elementos internos
+gsap.utils.toArray(".container > *").forEach((item, i) => {
+  gsap.to(item, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    delay: i * 0.2,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".sobre-mim",
+      start: "top 70%",
+      toggleActions: "play none none none",
+    }
   });
 });
 
