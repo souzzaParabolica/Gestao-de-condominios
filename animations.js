@@ -14,32 +14,57 @@ gsap.registerPlugin(ScrollTrigger);
       const heroTl = gsap.timeline();
       
       // Fundo e elementos decorativos primeiro
-      heroTl.to("section.primeira", { opacity: 1, duration: 0.3 })
-        .to("section.primeira .fundo2", {opacity: .50, duration: 0.5, stagger: 0.05 }, "-=0.2")
-            .to("section.primeira .fundo", { opacity: .20, duration: 0.5, stagger: 0.05 }, "-=0.2")
-            
-            
-            // Texto
-            .to("section.primeira h1", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, "-=0.3")
-            .to("section.primeira p", { opacity: 1, y: 0, duration: 0.4, ease: "power1.out" }, "-=0.2")
-            
-            // Imagem
-            .to("section.primeira .relative img", { 
-              opacity: 1, 
-              scale: 1, 
-              rotationY: 0, 
-              duration: 0.6, 
-              ease: "power2.out" 
-            }, "-=0.2")
-            
-            // Botão por último
-            .to("section.primeira button", { 
-              opacity: 1, 
-              y: 0, 
-              scale: 1, 
-              duration: 0.4, 
-              ease: "back.out(1.5)" 
-            }, "-=0.1");
+      heroTl
+        .to("section.primeira", { opacity: 1, duration: 0.3 })
+        .to(
+          "section.primeira .fundo2",
+          { opacity: 0.5, duration: 0.5, stagger: 0.05 },
+          "-=0.2"
+        )
+        .to(
+          "section.primeira .fundo",
+          { opacity: 0.2, duration: 0.5, stagger: 0.05 },
+          "-=0.2"
+        )
+
+        // Texto
+        .to(
+          "section.primeira h1",
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+          "-=0.3"
+        )
+        .to(
+          "section.primeira p",
+          { opacity: 1, y: 0, duration: 0.4, ease: "power1.out" },
+          "-=0.2"
+        )
+
+        // Imagem
+        .to(
+          "section.primeira .relative img",
+          {
+            opacity: 1,
+            scale: 1,
+            rotationY: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "-=0.2"
+        )
+
+        // Botão por último
+        .to(
+          "section.primeira button",
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out(1.5)",
+          },
+          "-=0.1"
+        );
+           
     }
 
 
