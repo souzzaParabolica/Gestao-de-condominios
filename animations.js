@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
     if (typeof gsap !== 'undefined') {
       // Configurar estado inicial dos elementos da primeira seção
       gsap.set("section.primeira", { opacity: 0 });
-      gsap.set("section.primeira .absolute", { opacity: 0 });
+      gsap.set("section.primeira .fundo", { opacity: 0 });
       gsap.set("section.primeira h1", { opacity: 0, y: 30 });
       gsap.set("section.primeira p", { opacity: 0, y: 20 });
       gsap.set("section.primeira button", { opacity: 0, y: 20, scale: 0.9 });
@@ -15,7 +15,9 @@ gsap.registerPlugin(ScrollTrigger);
       
       // Fundo e elementos decorativos primeiro
       heroTl.to("section.primeira", { opacity: 1, duration: 0.3 })
-            .to("section.primeira .absolute", { opacity: .10, duration: 0.5, stagger: 0.05 }, "-=0.2")
+        .to("section.primeira .fundo2", {opacity: .50, duration: 0.5, stagger: 0.05 }, "-=0.2")
+            .to("section.primeira .fundo", { opacity: .20, duration: 0.5, stagger: 0.05 }, "-=0.2")
+            
             
             // Texto
             .to("section.primeira h1", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, "-=0.3")
