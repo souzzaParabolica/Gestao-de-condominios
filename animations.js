@@ -560,6 +560,68 @@ gsap.utils.toArray(".container > *").forEach((item, i) => {
     }
   });
 });
+ // Função para animar contadores
+    function iniciarContadores() {
+      const contadores = document.querySelectorAll('.contador');
+      
+      contadores.forEach(contador => {
+        const valorFinal = parseInt(contador.getAttribute('data-valor'));
+        const duracao = 2000; // 2 segundos
+        const incremento = valorFinal / (duracao / 16); // 60fps
+        let valorAtual = 0;
+        
+        const timer = setInterval(() => {
+          valorAtual += incremento;
+          if (valorAtual >= valorFinal) {
+            valorAtual = valorFinal;
+            clearInterval(timer);
+          }
+          contador.textContent = Math.floor(valorAtual);
+        }, 16);
+      });
+    }
+
+    // Animação da seção com GSAP
+    if (typeof gsap !== 'undefined') {
+      gsap.to(".estatisticas", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".estatisticas",
+          start: "top 80%",
+          toggleActions: "play none none none",
+          onEnter: iniciarContadores
+        }
+      });
+
+      gsap.utils.toArray(".estatistica-item").forEach((item, i) => {
+        gsap.to(item, {
+          opacity: 1,
+          y: 0,
+          duration: 2,
+          delay: i * 0.15,
+          scrollTrigger: {
+            trigger: ".estatisticas",
+            start: "top 70%",
+            toggleActions: "play none none none",
+          }
+        });
+      });
+    } else {
+      // Fallback caso GSAP não esteja disponível
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            iniciarContadores();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(document.querySelector('.estatisticas'));
+    }
+
 
 const continueBtn = document.querySelector(".continue-application");
 

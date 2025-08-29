@@ -787,3 +787,12 @@ footer input::placeholder {
     }
 }
 
+.estatisticas {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.estatistica-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
